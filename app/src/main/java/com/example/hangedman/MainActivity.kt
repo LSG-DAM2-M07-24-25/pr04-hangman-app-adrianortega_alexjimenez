@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.hangedman.ui.theme.HangedManTheme
+import androidx.*
 
 
 class MainActivity : ComponentActivity() {
@@ -21,10 +22,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             HangedManTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+
                 }
             }
         }
@@ -32,17 +30,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun OnCreate(){
+    val navigationController = rememberNavController
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     HangedManTheme {
-        Greeting("Android")
+        OnCreate()
     }
 }
