@@ -13,6 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.hangedman.ui.theme.HangedManTheme
 import androidx.*
+import androidx.compose.material3.MaterialTheme
+import androidx.navigation.compose.rememberNavController
 
 
 class MainActivity : ComponentActivity() {
@@ -21,8 +23,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             HangedManTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-
+                Surface(
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    val navigationController = rememberNavController()
+                    LoadingScreen(navigationController)
                 }
             }
         }
